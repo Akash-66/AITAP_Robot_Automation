@@ -16,3 +16,6 @@
 
 ## Giude:
 - https://robotframework.org/robotframework/latest/libraries/XML.html
+
+## API Samples
+- https://apidocs.apigee.com/docs/mock-target/1/routes/get
