@@ -1,0 +1,7 @@
+<studentsDetail xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/WebApiOauth2.Models">
+  <date_of_birth>1997</date_of_birth>
+  <first_name>Akash</first_name>
+  <id>1</id>
+  <last_name>Kesarwani</last_name>
+  <middle_name>NA</middle_name>
+</studentsDetail>
