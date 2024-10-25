@@ -17,6 +17,8 @@ SOAP API POST METHOD
     ${response_status}    Set Variable    ${response}    # response will return status only
     TRY
         Should Be Equal As Strings    ${response_status}    <Response [201]>
+        ${response_content}    Set Variable    ${response.content}
+        Log To Console    ${response_content}
     EXCEPT
         Log To Console    ${response_status}
     END
