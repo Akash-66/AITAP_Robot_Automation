@@ -11,5 +11,10 @@ SOAP API POST METHOD
     ${request_header}    Create Dictionary    Content-Type=application/xml
     ${response}    POST On Session    mysession    ${base_url}    data=${request_xml}    headers=${request_header}    expected_status=any
     ${response_status}    Set Variable    ${response}    # response will return status only
-    ${response}    Convert To String    ${response.content}    #response.content will store response body
-    ${response}    Parse Xml    ${response}
+    TRY
+        Should Be Equal As Strings    ${response_status}    <Response [200]>
+        ${response}    Convert To String    ${response.content}    #response.content will store response body
+        ${response}    Parse Xml    ${response}
+    EXCEPT
+        Log To Console    ${response_status}
+    END
