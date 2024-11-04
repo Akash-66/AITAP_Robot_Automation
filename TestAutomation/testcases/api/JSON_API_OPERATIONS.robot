@@ -54,3 +54,11 @@ JSON API BEARER AUTHORIZATION
     EXCEPT
         ${MSG} Set Variable    ${response.status_code}
     END
+
+JSON API BASIC AUTHORIZATION
+    [Tags]    robot:continue-on-failure
+    Create Session    mysession    https://dummyjson.com    verify=True
+    ${user_credentials}    Convert To Bytes    emilys:emilyspass    #your username:your passowrd
+    ${user_credentials}    Evaluate    base64.b64encode($user_credentials)    base64
+    ${request_header}    Create Dictionary    Authorization=Basic ${user_credentials}    Content-Type=application/json
+    ${MSG} Set Variable    above request_header having basic authorization
